@@ -1,31 +1,34 @@
+/* Soft orange: hsl(35, 77%, 62%)
+Soft red: hsl(5, 85%, 63%)
+Off-white: hsl(36, 100%, 99%)
+Grayish blue: hsl(233, 8%, 79%)
+Dark grayish blue: hsl(236, 13%, 42%)
+Very dark blue: hsl(240, 100%, 5%) */
+
 :root {
+    --soft-red: hsl(5, 85%, 63%);
+    --soft-orange: hsl(35, 77%, 62%);
     --grayish-blue: hsl(233, 8%, 79%);
     --dark-grayish-blue: hsl(236, 13%, 42%);
     --very-dark-blue: hsl(240, 100%, 5%);
-    --off-white: hsl(36, 100%, 99%);
-    --soft-red: hsl(5, 85%, 63%);
-    --soft-orange: hsl(35, 77%, 62%);
-
-
+    --white: hsl(36, 100%, 99%);
 }
 
-
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 15px;
     line-height: 1.5;
 }
 
-
 .container {
+    margin-top: 72px;
     max-width: 1024px;
     width: 96%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 72px;
 }
 
-/*HEADER*/
+/* Header  */
 
 header {
     display: flex;
@@ -33,18 +36,24 @@ header {
     justify-content: space-between;
 }
 
-header nav {
+.hamburger-menu-wrapper {
+    display: none;
+}
+
+header .hamburger-menu-open {
+    display: none;
+}
+
+header .desktop-nav {
     display: flex;
     gap: 36px;
 }
 
-header nav a {
-    color: var(--dark-grayish-blue)
+header .desktop-nav a {
+    color: var(--dark-grayish-blue);
 }
 
-
-
-/* MAIN */
+/* Main */
 
 main {
     gap: 24px;
@@ -52,18 +61,18 @@ main {
     display: grid;
 }
 
-/* FEATURED NEW */
+/* Featured New */
 
 section#featured-new h1 {
     font-size: 36px;
-    font-weight: 800;
     line-height: 36px;
-    color: var(--very-dark-grayish-blue);
+    font-weight: 800;
+    color: var(--very-dark-blue);
     flex: 1;
 }
 
 .featured-new-body {
-    margin-top: 24;
+    margin-top: 24px;
 }
 
 .featured-new-description {
@@ -71,67 +80,60 @@ section#featured-new h1 {
 }
 
 .featured-new-description p {
-    color: var(--dark-grayish-blue)
+    color: var(--dark-grayish-blue);
 }
-
-
 
 .featured-new-description button {
     padding: 12px 24px;
+    color: var(--white);
     background-color: var(--soft-red);
-    color: var(--off-white);
     text-transform: uppercase;
     letter-spacing: 1.75px;
     margin-top: 16px;
-
 }
 
-
-/* NEWS SIDE BAR*/
-
-
+/* News Sidebar */
 
 section#news-sidebar {
     background-color: var(--very-dark-blue);
-    color: var(--off-white);
+    color: var(--white);
     padding: 16px;
 }
 
 #news-sidebar .new-item:not(:last-child) {
     border-bottom: 1px solid var(--grayish-blue);
     padding-bottom: 16px;
-    padding-top: 16px;
 }
 
 #news-sidebar .new-item:not(:nth-child(2)) {
-
     padding-top: 16px;
 }
 
 #news-sidebar h2 {
+    color: var(--soft-orange);
     font-size: 24px;
     font-weight: 700;
-    color: var(--soft-orange);
     margin-bottom: 12px;
 }
 
 #news-sidebar h4 {
     font-weight: 700;
+    margin-bottom: 4px;
 }
 
 #news-sidebar p {
     font-size: 12px;
-    opacity: 0.7;
+    opacity: 0.75;
 }
 
+/* News Bottom */
 
-/* NEWS BOTTOM */
 section#news-bottom {
     display: flex;
     justify-content: space-between;
 }
 
-#news-bottom>* {
+#news-bottom .new-bottom-item {
     flex: 1;
     display: flex;
     align-items: center;
@@ -153,23 +155,19 @@ section#news-bottom {
     color: var(--dark-grayish-blue);
 }
 
-
 @media (min-width: 500px) {
     main {
-
         grid-template-areas:
             "featuredNew featuredNew newsSidebar"
-            "newsBottom  newsBottom newsBottom";
-
+            "newsBottom newsBottom newsBottom";
     }
 
-    section#featured-new {
+    #featured-new {
         grid-area: featuredNew;
     }
 
     section#news-sidebar {
         grid-area: newsSidebar;
-
     }
 
     section#news-bottom {
@@ -197,5 +195,57 @@ section#news-bottom {
 
     .new-body {
         flex: 2;
+    }
+
+    header .desktop-nav {
+        display: none;
+    }
+
+    header .hamburger-menu-open {
+        display: block;
+    }
+
+    .hamburger-menu-wrapper {
+        display: flex;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 100%;
+        transition: left 250ms ease, opacity 250ms ease;
+    }
+
+    .open {
+        opacity: 100%;
+        left: 0;
+    }
+
+    .overlay {
+        flex: 1;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .mobile-nav-wrapper {
+        background-color: var(--white);
+        flex: 3;
+    }
+
+    .mobile-nav {
+        margin-top: 72px;
+        margin-left: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .mobile-nav a {
+        color: var(--very-dark-blue);
+    }
+
+    .close-icon {
+        margin-left: auto;
+        margin-top: 24px;
+        margin-right: 24px;
     }
 }
