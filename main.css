@@ -48,3 +48,26 @@ header nav {
 header nav a {
     color: var(--dark-grayish-blue)
 }
+
+
+
+/* MAIN */
+
+main{
+   display: grid;
+   grid-template-areas: 
+                        "featuredNew newsSidebar" 
+                        "newsBottom  newsBottom"; 
+}
+
+section#featured-new {
+grid-area: featuredNew;
+}
+
+section#news-sidebar {
+    grid-area: newsSidebar;
+}
+
+section#news-bottom {
+    grid-area: newsBottom;
+}
