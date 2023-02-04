@@ -1,2 +1,50 @@
+/*
+- Soft orange: hsl(35, 77%, 62%)
+- Soft red: hsl(5, 85%, 63%)
+Off-white: hsl(36, 100%, 99%)
+Grayish blue: hsl(233, 8%, 79%)
+Dark grayish blue: hsl(236, 13%, 42%)
+Very dark blue: hsl(240, 100%, 5%) */
 
-body{background-color: teal;}
+:root{
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-grayish-blue: hsl(240, 100%, 5%) ;
+    --off-white: hsl(36, 100%, 99%);
+    --soft-red: hsl(5, 85%, 63%);
+    --soft-orange: hsl(35, 77%, 62%);
+
+    
+}
+
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+
+.container{
+    max-width: 1024px;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 72px;
+}
+
+/*HEADER*/
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav {
+    display: flex;
+    gap:36px;
+}
+
+header nav a {
+    color: var(--dark-grayish-blue)
+}
