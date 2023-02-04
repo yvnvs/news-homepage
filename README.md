@@ -17,7 +17,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://yvnvs.github.io/news-homepage/)
+- Live Site URL: [live site URL](https://yvnvs.github.io/news-homepage/)
 
 
 ### Built with
