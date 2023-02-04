@@ -1,15 +1,7 @@
-/*
-- Soft orange: hsl(35, 77%, 62%)
-- Soft red: hsl(5, 85%, 63%)
-Off-white: hsl(36, 100%, 99%)
-Grayish blue: hsl(233, 8%, 79%)
-Dark grayish blue: hsl(236, 13%, 42%)
-Very dark blue: hsl(240, 100%, 5%) */
-
 :root {
     --grayish-blue: hsl(233, 8%, 79%);
     --dark-grayish-blue: hsl(236, 13%, 42%);
-    --very-dark-grayish-blue: hsl(240, 100%, 5%);
+    --very-dark-blue: hsl(240, 100%, 5%);
     --off-white: hsl(36, 100%, 99%);
     --soft-red: hsl(5, 85%, 63%);
     --soft-orange: hsl(35, 77%, 62%);
@@ -55,6 +47,7 @@ header nav a {
 /* MAIN */
 
 main {
+    gap: 24px;
     margin-top: 72px;
     display: grid;
     grid-template-areas:
@@ -75,6 +68,7 @@ section#featured-new h1 {
     font-weight: 800;
     line-height: 36px;
     color: var(--very-dark-grayish-blue);
+    flex: 1;
 }
 
 .featured-new-body {
@@ -82,8 +76,14 @@ section#featured-new h1 {
 }
 
 .featured-new-description {
+    flex: 1;
+}
+
+.featured-new-description p {
     color: var(--dark-grayish-blue)
 }
+
+
 
 .featured-new-description button {
     padding: 12px 24px;
@@ -96,8 +96,42 @@ section#featured-new h1 {
 }
 
 
+/* NEWS SIDE BAR*/
+
+
+
 section#news-sidebar {
     grid-area: newsSidebar;
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+    padding: 16px;
+}
+
+#news-sidebar .new-item:not(:last-child) {
+    border-bottom: 1px solid #999;
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+#news-sidebar .new-item:not(:nth-child(2)) {
+
+    padding-top: 16px;
+}
+
+#news-sidebar h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--soft-orange);
+    margin-bottom: 12px;
+}
+
+#news-sidebar h4 {
+    font-weight: 700;
+}
+
+#news-sidebar p {
+    font-size: 12px;
+    opacity: 0.7;
 }
 
 section#news-bottom {
